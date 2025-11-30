@@ -1,0 +1,2946 @@
+Yojna mitr project 
+  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YojnaMitra - Your Financial Companion</title>
+    <style>
+        :root {
+  /* Primitive Color Tokens */
+  --color-white: rgba(255, 255, 255, 1);
+  --color-black: rgba(0, 0, 0, 1);
+  --color-cream-50: rgba(252, 252, 249, 1);
+  --color-cream-100: rgba(255, 255, 253, 1);
+  --color-gray-200: rgba(245, 245, 245, 1);
+  --color-gray-300: rgba(167, 169, 169, 1);
+  --color-gray-400: rgba(119, 124, 124, 1);
+  --color-slate-500: rgba(98, 108, 113, 1);
+  --color-brown-600: rgba(94, 82, 64, 1);
+  --color-charcoal-700: rgba(31, 33, 33, 1);
+  --color-charcoal-800: rgba(38, 40, 40, 1);
+  --color-slate-900: rgba(19, 52, 59, 1);
+  --color-teal-300: rgba(50, 184, 198, 1);
+  --color-teal-400: rgba(45, 166, 178, 1);
+  --color-teal-500: rgba(33, 128, 141, 1);
+  --color-teal-600: rgba(29, 116, 128, 1);
+  --color-teal-700: rgba(26, 104, 115, 1);
+  --color-teal-800: rgba(41, 150, 161, 1);
+  --color-red-400: rgba(255, 84, 89, 1);
+  --color-red-500: rgba(192, 21, 47, 1);
+  --color-orange-400: rgba(230, 129, 97, 1);
+  --color-orange-500: rgba(168, 75, 47, 1);
+
+  /* RGB versions for opacity control */
+  --color-brown-600-rgb: 94, 82, 64;
+  --color-teal-500-rgb: 33, 128, 141;
+  --color-slate-900-rgb: 19, 52, 59;
+  --color-slate-500-rgb: 98, 108, 113;
+  --color-red-500-rgb: 192, 21, 47;
+  --color-red-400-rgb: 255, 84, 89;
+  --color-orange-500-rgb: 168, 75, 47;
+  --color-orange-400-rgb: 230, 129, 97;
+
+  /* Techy Custom Colors */
+  --neon-cyan: #00D4FF;
+  --neon-purple: #9C27B0;
+  --neon-teal: #20B2AA;
+  --dark-bg: #0F1419;
+  --card-bg: rgba(26, 31, 46, 0.7);
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+
+  /* Background color tokens (Dark Mode) */
+  --color-bg-1: rgba(29, 78, 216, 0.15);
+  --color-bg-2: rgba(180, 83, 9, 0.15);
+  --color-bg-3: rgba(21, 128, 61, 0.15);
+  --color-bg-4: rgba(185, 28, 28, 0.15);
+  --color-bg-5: rgba(107, 33, 168, 0.15);
+  --color-bg-6: rgba(194, 65, 12, 0.15);
+  --color-bg-7: rgba(190, 24, 93, 0.15);
+  --color-bg-8: rgba(8, 145, 178, 0.15);
+
+  /* Semantic Color Tokens */
+  --color-background: #0F1419;
+  --color-surface: rgba(26, 31, 46, 0.7);
+  --color-text: #E0E0E0;
+  --color-text-secondary: rgba(224, 224, 224, 0.7);
+  --color-primary: #20B2AA;
+  --color-primary-hover: #2CD4CC;
+  --color-primary-active: #1A9A93;
+  --color-secondary: rgba(0, 212, 255, 0.2);
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-btn-primary-text: #0F1419;
+
+  /* Typography */
+  --font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-size-xs: 11px;
+  --font-size-sm: 12px;
+  --font-size-base: 14px;
+  --font-size-md: 14px;
+  --font-size-lg: 16px;
+  --font-size-xl: 18px;
+  --font-size-2xl: 20px;
+  --font-size-3xl: 24px;
+  --font-size-4xl: 30px;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 550;
+  --font-weight-bold: 600;
+
+  /* Spacing */
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-24: 24px;
+  --space-32: 32px;
+
+  /* Border Radius */
+  --radius-sm: 6px;
+  --radius-base: 8px;
+  --radius-md: 10px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+
+  /* Shadows */
+  --shadow-glow: 0 0 20px rgba(32, 178, 170, 0.3);
+  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.4);
+
+  /* Animation */
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --duration-slow: 400ms;
+  --ease-standard: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family-base);
+  background: var(--dark-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #0F1419 0%, #1a1f2e 50%, #0F1419 100%);
+  z-index: -2;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 20% 50%, rgba(32, 178, 170, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 80% 80%, rgba(156, 39, 176, 0.1) 0%, transparent 50%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(15, 20, 25, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--glass-border);
+  padding: var(--space-16) var(--space-24);
+  transition: all var(--duration-normal) var(--ease-standard);
+}
+
+.navbar.scrolled {
+  background: rgba(15, 20, 25, 0.95);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  background: linear-gradient(135deg, var(--neon-cyan), var(--neon-teal));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  gap: var(--space-32);
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: var(--font-weight-medium);
+  transition: all var(--duration-fast);
+  position: relative;
+  padding: var(--space-4) 0;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--neon-cyan);
+  transition: width var(--duration-normal) var(--ease-standard);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+.nav-links a:hover {
+  color: var(--neon-cyan);
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-16);
+}
+
+.btn-login {
+  padding: var(--space-8) var(--space-24);
+  background: transparent;
+  border: 1px solid var(--neon-cyan);
+  color: var(--neon-cyan);
+  border-radius: var(--radius-base);
+  cursor: pointer;
+  font-weight: var(--font-weight-medium);
+  transition: all var(--duration-normal) var(--ease-standard);
+}
+
+.btn-login:hover {
+  background: var(--neon-cyan);
+  color: var(--dark-bg);
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: var(--neon-cyan);
+  border-radius: 2px;
+  transition: all var(--duration-normal);
+}
+
+/* Main Content */
+.main-content {
+  margin-top: 70px;
+  min-height: calc(100vh - 70px);
+}
+
+.page {
+  display: none;
+  animation: fadeIn var(--duration-slow) var(--ease-standard);
+}
+
+.page.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hero Section */
+.hero {
+  min-height: calc(100vh - 70px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-32);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  max-width: 900px;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 56px;
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-24);
+  background: linear-gradient(135deg, var(--neon-cyan), var(--neon-teal), var(--neon-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% { filter: hue-rotate(0deg); }
+  50% { filter: hue-rotate(20deg); }
+}
+
+.hero p {
+  font-size: var(--font-size-2xl);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-32);
+}
+
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--space-24);
+  margin: var(--space-32) 0;
+}
+
+.stat-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-24);
+  transition: all var(--duration-normal) var(--ease-standard);
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-glow);
+  border-color: var(--neon-cyan);
+}
+
+.stat-number {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--neon-cyan);
+  display: block;
+}
+
+.stat-label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin-top: var(--space-8);
+}
+
+.btn-primary {
+  padding: var(--space-16) var(--space-32);
+  background: linear-gradient(135deg, var(--neon-cyan), var(--neon-teal));
+  color: var(--dark-bg);
+  border: none;
+  border-radius: var(--radius-base);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+  transition: all var(--duration-normal) var(--ease-standard);
+  box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(0, 212, 255, 0.5);
+}
+
+/* Feature Cards */
+.features-section {
+  padding: var(--space-32);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-24);
+  margin-top: var(--space-32);
+}
+
+.feature-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-32);
+  transition: all var(--duration-normal) var(--ease-standard);
+  cursor: pointer;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 12px 40px rgba(0, 212, 255, 0.3);
+  border-color: var(--neon-cyan);
+}
+
+.feature-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--neon-cyan), var(--neon-teal));
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  margin-bottom: var(--space-16);
+}
+
+.feature-card h3 {
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--space-12);
+  color: var(--color-text);
+}
+
+.feature-card p {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-base);
+}
+
+/* Content Pages */
+.content-page {
+  padding: var(--space-32);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: var(--space-32);
+}
+
+.page-header h1 {
+  font-size: var(--font-size-4xl);
+  margin-bottom: var(--space-16);
+  background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.page-header p {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-lg);
+}
+
+/* Filters */
+.filters {
+  display: flex;
+  gap: var(--space-16);
+  margin-bottom: var(--space-32);
+  flex-wrap: wrap;
+}
+
+.search-bar {
+  flex: 1;
+  min-width: 250px;
+  padding: var(--space-12) var(--space-16);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-base);
+  color: var(--color-text);
+  font-size: var(--font-size-base);
+  transition: all var(--duration-normal);
+}
+
+.search-bar:focus {
+  outline: none;
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+}
+
+.filter-select {
+  padding: var(--space-12) var(--space-16);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-base);
+  color: var(--color-text);
+  font-size: var(--font-size-base);
+  cursor: pointer;
+  transition: all var(--duration-normal);
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: var(--neon-cyan);
+}
+
+/* Dynamic Cards */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--space-24);
+  animation: fadeIn var(--duration-slow) var(--ease-standard);
+}
+
+.dynamic-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-24);
+  transition: all var(--duration-normal) var(--ease-standard);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.dynamic-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.1), transparent);
+  transition: left 0.5s;
+}
+
+.dynamic-card:hover::before {
+  left: 100%;
+}
+
+.dynamic-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 35px rgba(0, 212, 255, 0.3);
+  border-color: var(--neon-cyan);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: var(--space-16);
+}
+
+.card-title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  margin-bottom: var(--space-8);
+}
+
+.badge {
+  padding: var(--space-4) var(--space-12);
+  background: linear-gradient(135deg, var(--neon-cyan), var(--neon-teal));
+  color: var(--dark-bg);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+}
+
+.card-category {
+  display: inline-block;
+  padding: var(--space-4) var(--space-12);
+  background: var(--color-bg-5);
+  border: 1px solid var(--neon-purple);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  color: var(--neon-purple);
+  margin-bottom: var(--space-12);
+}
+
+.card-description {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-base);
+  margin-bottom: var(--space-16);
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card-benefits {
+  list-style: none;
+  margin-bottom: var(--space-16);
+}
+
+.card-benefits li {
+  padding: var(--space-4) 0;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  display: flex;
+  align-items: start;
+  gap: var(--space-8);
+}
+
+.card-benefits li::before {
+  content: '✓';
+  color: var(--neon-cyan);
+  font-weight: var(--font-weight-bold);
+  flex-shrink: 0;
+}
+
+.btn-secondary {
+  width: 100%;
+  padding: var(--space-12) var(--space-24);
+  background: transparent;
+  border: 1px solid var(--neon-cyan);
+  color: var(--neon-cyan);
+  border-radius: var(--radius-base);
+  cursor: pointer;
+  font-weight: var(--font-weight-medium);
+  transition: all var(--duration-normal) var(--ease-standard);
+}
+
+.btn-secondary:hover {
+  background: var(--neon-cyan);
+  color: var(--dark-bg);
+  box-shadow: 0 4px 15px rgba(0, 212, 255, 0.4);
+}
+
+/* Modal */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s var(--ease-standard);
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+.modal {
+  background: rgba(26, 31, 46, 0.95);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  max-width: 600px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: var(--space-32);
+  position: relative;
+  animation: scaleUp 0.3s var(--ease-standard);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: var(--space-16);
+  right: var(--space-16);
+  background: transparent;
+  border: none;
+  color: var(--color-text);
+  font-size: 28px;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-base);
+  transition: all var(--duration-fast);
+}
+
+.modal-close:hover {
+  background: var(--glass-bg);
+  color: var(--neon-cyan);
+}
+
+.modal h2 {
+  font-size: var(--font-size-3xl);
+  margin-bottom: var(--space-24);
+  color: var(--neon-cyan);
+}
+
+.modal-section {
+  margin-bottom: var(--space-24);
+}
+
+.modal-section h3 {
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--space-12);
+  color: var(--color-text);
+}
+
+.modal-section p,
+.modal-section li {
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.modal-section ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.modal-section ul li {
+  padding: var(--space-8) 0;
+  display: flex;
+  align-items: start;
+  gap: var(--space-8);
+}
+
+.modal-section ul li::before {
+  content: '•';
+  color: var(--neon-cyan);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-xl);
+  flex-shrink: 0;
+}
+
+/* Login Modal */
+.login-tabs {
+  display: flex;
+  gap: var(--space-16);
+  margin-bottom: var(--space-24);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.tab-button {
+  padding: var(--space-12) var(--space-24);
+  background: transparent;
+  border: none;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+  border-bottom: 2px solid transparent;
+  transition: all var(--duration-normal);
+}
+
+.tab-button.active {
+  color: var(--neon-cyan);
+  border-bottom-color: var(--neon-cyan);
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+  animation: fadeIn 0.3s;
+}
+
+.form-group {
+  margin-bottom: var(--space-20);
+}
+
+.form-label {
+  display: block;
+  margin-bottom: var(--space-8);
+  color: var(--color-text);
+  font-weight: var(--font-weight-medium);
+}
+
+.form-input {
+  width: 100%;
+  padding: var(--space-12) var(--space-16);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-base);
+  color: var(--color-text);
+  font-size: var(--font-size-base);
+  transition: all var(--duration-normal);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+}
+
+.form-checkbox {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  margin: var(--space-16) 0;
+}
+
+.form-checkbox input {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.forgot-password {
+  color: var(--neon-cyan);
+  text-decoration: none;
+  font-size: var(--font-size-sm);
+  transition: all var(--duration-fast);
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: var(--space-16);
+  margin: var(--space-24) 0;
+  color: var(--color-text-secondary);
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--glass-border);
+}
+
+.btn-google {
+  width: 100%;
+  padding: var(--space-12) var(--space-24);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  color: var(--color-text);
+  border-radius: var(--radius-base);
+  cursor: pointer;
+  font-weight: var(--font-weight-medium);
+  transition: all var(--duration-normal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-12);
+}
+
+.btn-google:hover {
+  background: var(--glass-border);
+  border-color: var(--neon-cyan);
+}
+
+/* Issues Page */
+.issues-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-24);
+}
+
+.issue-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-24);
+  transition: all var(--duration-normal) var(--ease-standard);
+  cursor: pointer;
+}
+
+.issue-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 35px rgba(156, 39, 176, 0.3);
+  border-color: var(--neon-purple);
+}
+
+.issue-category {
+  display: inline-block;
+  padding: var(--space-4) var(--space-12);
+  background: var(--color-bg-7);
+  border: 1px solid var(--neon-purple);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  color: var(--neon-purple);
+  margin-bottom: var(--space-12);
+  font-weight: var(--font-weight-bold);
+}
+
+.tips-list {
+  list-style: none;
+  margin: var(--space-16) 0;
+}
+
+.tips-list li {
+  padding: var(--space-8) 0;
+  color: var(--color-text-secondary);
+  display: flex;
+  align-items: start;
+  gap: var(--space-8);
+}
+
+.tips-list li::before {
+  content: '💡';
+  flex-shrink: 0;
+}
+
+/* Vision Page */
+.vision-section {
+  margin-bottom: var(--space-32);
+  padding: var(--space-32);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(10px);
+}
+
+.vision-section h2 {
+  font-size: var(--font-size-3xl);
+  margin-bottom: var(--space-24);
+  color: var(--neon-cyan);
+  text-align: center;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-24);
+  margin-top: var(--space-24);
+}
+
+.value-card {
+  text-align: center;
+  padding: var(--space-24);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  transition: all var(--duration-normal);
+}
+
+.value-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--neon-cyan);
+  box-shadow: var(--shadow-glow);
+}
+
+.value-icon {
+  font-size: 48px;
+  margin-bottom: var(--space-16);
+}
+
+.value-card h3 {
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--space-12);
+  color: var(--color-text);
+}
+
+.impact-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-24);
+  margin-top: var(--space-32);
+}
+
+.impact-card {
+  text-align: center;
+  padding: var(--space-24);
+}
+
+.impact-number {
+  font-size: 48px;
+  font-weight: var(--font-weight-bold);
+  color: var(--neon-cyan);
+  display: block;
+  margin-bottom: var(--space-8);
+}
+
+.impact-label {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-24);
+  margin-top: var(--space-24);
+}
+
+.team-member {
+  text-align: center;
+  padding: var(--space-16);
+}
+
+.team-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin: 0 auto var(--space-16);
+  border: 3px solid var(--neon-cyan);
+  object-fit: cover;
+}
+
+.team-member h4 {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--space-4);
+  color: var(--color-text);
+}
+
+.team-member p {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: var(--space-32) auto;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: var(--space-16) var(--space-32);
+  background: linear-gradient(135deg, var(--neon-cyan), var(--neon-teal));
+  color: var(--dark-bg);
+  border: none;
+  border-radius: var(--radius-base);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+  transition: all var(--duration-normal);
+}
+
+.btn-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(0, 212, 255, 0.5);
+}
+
+/* Toast Notification */
+.toast {
+  position: fixed;
+  bottom: var(--space-24);
+  right: var(--space-24);
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--neon-cyan);
+  border-radius: var(--radius-base);
+  padding: var(--space-16) var(--space-24);
+  color: var(--color-text);
+  box-shadow: 0 4px 20px rgba(0, 212, 255, 0.3);
+  z-index: 3000;
+  display: none;
+  animation: slideIn 0.3s var(--ease-standard);
+}
+
+.toast.show {
+  display: block;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(400px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: rgba(15, 20, 25, 0.98);
+    flex-direction: column;
+    padding: var(--space-24);
+    gap: var(--space-16);
+    border-bottom: 1px solid var(--glass-border);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .hero p {
+    font-size: var(--font-size-lg);
+  }
+
+  .stats-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .features-grid,
+  .cards-grid,
+  .issues-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .filters {
+    flex-direction: column;
+  }
+
+  .modal {
+    width: 95%;
+    padding: var(--space-24);
+  }
+
+  .values-grid,
+  .team-grid,
+  .impact-stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .stat-number {
+    font-size: var(--font-size-3xl);
+  }
+
+  .page-header h1 {
+    font-size: var(--font-size-3xl);
+  }
+}
+
+/* Loading Animation */
+.loading {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid var(--glass-border);
+  border-top-color: var(--neon-cyan);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Custom Cursor Styles */
+.custom-cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--neon-cyan);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+  mix-blend-mode: difference;
+}
+
+.custom-cursor::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  background: var(--neon-cyan);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 10px var(--neon-cyan);
+}
+
+.custom-cursor.cursor-hover {
+  width: 50px;
+  height: 50px;
+  background: rgba(0, 212, 255, 0.1);
+  border-width: 3px;
+}
+
+.custom-cursor.cursor-click {
+  width: 15px;
+  height: 15px;
+  background: rgba(0, 212, 255, 0.3);
+}
+
+.cursor-trail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.cursor-particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: var(--neon-cyan);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: particleFade 1s ease-out forwards;
+  box-shadow: 0 0 10px var(--neon-cyan);
+}
+
+@keyframes particleFade {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(calc(var(--tx, 0) * 20px), calc(var(--ty, 0) * 20px)) scale(0);
+  }
+}
+
+/* Particle Canvas */
+#particleCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Enhanced Button Ripple Effect */
+.btn-primary, .btn-secondary, .btn-login {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::after, .btn-secondary::after, .btn-login::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn-primary:active::after, .btn-secondary:active::after, .btn-login:active::after {
+  width: 300px;
+  height: 300px;
+}
+
+/* Glowing text animation */
+@keyframes textGlow {
+  0%, 100% {
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.5),
+                 0 0 20px rgba(0, 212, 255, 0.3),
+                 0 0 30px rgba(0, 212, 255, 0.2);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(0, 212, 255, 0.8),
+                 0 0 30px rgba(0, 212, 255, 0.5),
+                 0 0 40px rgba(0, 212, 255, 0.3);
+  }
+}
+
+.logo {
+  animation: textGlow 3s ease-in-out infinite;
+}
+
+/* Floating animation for hero elements */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.stat-card {
+  animation: float 3s ease-in-out infinite;
+}
+
+.stat-card:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.stat-card:nth-child(3) {
+  animation-delay: 1s;
+}
+
+/* Pulsing animation */
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(0, 212, 255, 0);
+  }
+}
+
+.btn-primary {
+  animation: pulse 2s infinite;
+}
+
+/* Card shimmer effect on hover */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.dynamic-card::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(0, 212, 255, 0.1), 
+    transparent);
+  transform: rotate(45deg);
+  animation: shimmer 3s infinite;
+  pointer-events: none;
+}
+
+/* Enhanced modal entrance */
+@keyframes modalEntrance {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) rotateX(-10deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotateX(0deg);
+  }
+}
+
+.modal {
+  animation: modalEntrance 0.4s var(--ease-standard);
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+/* Neon glow on active elements */
+.nav-links a.active {
+  text-shadow: 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-cyan);
+}
+
+/* Enhanced badge styling */
+.badge {
+  position: relative;
+  overflow: hidden;
+}
+
+.badge::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: badgeShine 2s infinite;
+}
+
+@keyframes badgeShine {
+  0% {
+    left: -100%;
+  }
+  50%, 100% {
+    left: 100%;
+  }
+}
+
+/* Government seal badge */
+.govt-seal {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
+  padding: var(--space-8) var(--space-16);
+  background: linear-gradient(135deg, #FFD700, #FFA500);
+  color: #0F1419;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+.govt-seal::before {
+  content: '★';
+  font-size: 16px;
+}
+
+/* Loading spinner with glow */
+.loading {
+  box-shadow: 0 0 10px var(--neon-cyan);
+}
+
+/* Scroll reveal animation */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cards-grid > * {
+  animation: slideUp 0.6s var(--ease-standard) backwards;
+}
+
+.cards-grid > *:nth-child(1) { animation-delay: 0.1s; }
+.cards-grid > *:nth-child(2) { animation-delay: 0.2s; }
+.cards-grid > *:nth-child(3) { animation-delay: 0.3s; }
+.cards-grid > *:nth-child(4) { animation-delay: 0.4s; }
+.cards-grid > *:nth-child(5) { animation-delay: 0.5s; }
+.cards-grid > *:nth-child(6) { animation-delay: 0.6s; }
+
+/* Hide default cursor */
+* {
+  cursor: none;
+}
+
+a, button, input, select, textarea {
+  cursor: none;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dark-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--neon-cyan);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--neon-teal);
+}
+    </style>
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div id="customCursor" class="custom-cursor"></div>
+    <div id="cursorTrail" class="cursor-trail"></div>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo" onclick="navigateTo('home')">YojnaMitra</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" onclick="navigateTo('home')" class="nav-link active">Home</a></li>
+                <li><a href="#schemes" onclick="navigateTo('schemes')" class="nav-link">Schemes</a></li>
+                <li><a href="#policies" onclick="navigateTo('policies')" class="nav-link">Policies</a></li>
+                <li><a href="#issues" onclick="navigateTo('issues')" class="nav-link">Issues</a></li>
+                <li><a href="#vision" onclick="navigateTo('vision')" class="nav-link">Vision</a></li>
+            </ul>
+            <div class="nav-right">
+                <button class="btn-login" onclick="openModal('login')">Login</button>
+                <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Home Page -->
+        <div id="home" class="page active">
+            <section class="hero">
+                <div class="hero-content">
+                    <h1>YojnaMitra Pro - Your AI Financial Companion</h1>
+                    <p>Real Government Schemes at Your Fingertips</p>
+                    
+                    <div class="stats-container">
+                        <div class="stat-card">
+                            <span class="stat-number" data-target="500">0</span>+
+                            <span class="stat-label">Active Schemes</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number" data-target="10000">0</span>+
+                            <span class="stat-label">Students Helped</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">₹500Cr+</span>
+                            <span class="stat-label">Funds Accessed</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number" data-target="92">0</span>%
+                            <span class="stat-label">Success Rate</span>
+                        </div>
+                    </div>
+
+                    <button class="btn-primary" onclick="navigateTo('schemes')">Get Started</button>
+                </div>
+            </section>
+
+            <section class="features-section">
+                <div class="features-grid">
+                    <div class="feature-card" onclick="navigateTo('schemes')">
+                        <div class="feature-icon">🎯</div>
+                        <h3>Find Schemes</h3>
+                        <p>Discover 500+ government and private schemes tailored for students</p>
+                    </div>
+                    <div class="feature-card" onclick="navigateTo('policies')">
+                        <div class="feature-icon">📊</div>
+                        <h3>Compare Policies</h3>
+                        <p>Compare education loans, scholarships, and financial policies</p>
+                    </div>
+                    <div class="feature-card" onclick="navigateTo('issues')">
+                        <div class="feature-icon">💡</div>
+                        <h3>Solve Issues</h3>
+                        <p>Get personalized solutions for your financial challenges</p>
+                    </div>
+                    <div class="feature-card" onclick="navigateTo('vision')">
+                        <div class="feature-icon">🚀</div>
+                        <h3>Expert Guidance</h3>
+                        <p>Access expert advice and resources for your financial journey</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Schemes Page -->
+        <div id="schemes" class="page">
+            <div class="content-page">
+                <div class="page-header">
+                    <h1>Financial Schemes</h1>
+                    <p>Explore schemes designed to support your educational journey</p>
+                </div>
+
+                <div class="filters">
+                    <input type="text" class="search-bar" placeholder="🔍 Search schemes by name, category, or eligibility..." id="schemeSearch" oninput="filterSchemes()">
+                    <select class="filter-select" id="schemeLevel" onchange="filterSchemes()">
+                        <option value="">All Academic Levels</option>
+                        <option value="Pre-Matric">Pre-Matric (IX-X)</option>
+                        <option value="Post-Matric">Post-Matric (XI-XII)</option>
+                        <option value="Bachelor">Bachelor's Degree</option>
+                        <option value="Master">Master's Degree</option>
+                        <option value="Doctoral">Doctoral (PhD)</option>
+                    </select>
+                    <select class="filter-select" id="schemeCategory" onchange="filterSchemes()">
+                        <option value="">All Categories</option>
+                        <option value="Scholarship">Scholarship</option>
+                        <option value="Education Loan">Education Loan</option>
+                        <option value="Research Fellowship">Research Fellowship</option>
+                    </select>
+                    <select class="filter-select" id="schemeProvider" onchange="filterSchemes()">
+                        <option value="">All Providers</option>
+                        <option value="Ministry">Central Ministry</option>
+                        <option value="AICTE">AICTE</option>
+                        <option value="UGC">UGC</option>
+                        <option value="CSIR">CSIR</option>
+                    </select>
+                </div>
+
+                <div class="nsp-info" style="background: var(--glass-bg); border: 1px solid var(--neon-cyan); border-radius: var(--radius-lg); padding: var(--space-24); margin-bottom: var(--space-32); text-align: center;">
+                    <h3 style="color: var(--neon-cyan); margin-bottom: var(--space-12);">🏛️ National Scholarship Portal (NSP)</h3>
+                    <p style="color: var(--color-text-secondary); margin-bottom: var(--space-16);">All schemes are directly integrated with Government of India's National Scholarship Portal</p>
+                    <a href="https://scholarships.gov.in/Students" target="_blank" class="btn-primary" style="display: inline-block; text-decoration: none;">Visit NSP Portal →</a>
+                </div>
+                <div class="cards-grid" id="schemesGrid"></div>
+            </div>
+        </div>
+
+        <!-- Policies Page -->
+        <div id="policies" class="page">
+            <div class="content-page">
+                <div class="page-header">
+                    <h1>Financial Policies</h1>
+                    <p>Understand policies that can help reduce your financial burden</p>
+                </div>
+
+                <div class="filters">
+                    <input type="text" class="search-bar" placeholder="Search policies..." id="policySearch" oninput="filterPolicies()">
+                    <select class="filter-select" id="policyType" onchange="filterPolicies()">
+                        <option value="">All Types</option>
+                        <option value="Tax Benefits">Tax Benefits</option>
+                        <option value="Scholarships">Scholarships</option>
+                        <option value="Insurance">Insurance</option>
+                        <option value="Financial Assistance">Financial Assistance</option>
+                    </select>
+                </div>
+
+                <div class="cards-grid" id="policiesGrid"></div>
+            </div>
+        </div>
+
+        <!-- Issues Page -->
+        <div id="issues" class="page">
+            <div class="content-page">
+                <div class="page-header">
+                    <h1>Common Student Issues</h1>
+                    <p>Select your issue to find personalized solutions</p>
+                </div>
+
+                <div class="issues-grid" id="issuesGrid"></div>
+            </div>
+        </div>
+
+        <!-- Vision Page -->
+        <div id="vision" class="page">
+            <div class="content-page">
+                <div class="page-header">
+                    <h1>Our Vision</h1>
+                    <p>Empowering students with accessible financial solutions</p>
+                </div>
+
+                <div class="vision-section">
+                    <h2>Our Mission</h2>
+                    <p style="text-align: center; font-size: var(--font-size-lg); color: var(--color-text-secondary); line-height: 1.8;">
+                        YojnaMitra aims to bridge the gap between students and financial opportunities. We believe every student deserves access to quality education without financial barriers. Our platform simplifies the complex landscape of scholarships, loans, and government schemes, making financial assistance accessible to all.
+                    </p>
+                </div>
+
+                <div class="vision-section">
+                    <h2>Our Values</h2>
+                    <div class="values-grid">
+                        <div class="value-card">
+                            <div class="value-icon">🔍</div>
+                            <h3>Transparency</h3>
+                            <p>Clear, honest information about every scheme and policy</p>
+                        </div>
+                        <div class="value-card">
+                            <div class="value-icon">⚡</div>
+                            <h3>Simplicity</h3>
+                            <p>Making complex financial processes easy to understand</p>
+                        </div>
+                        <div class="value-card">
+                            <div class="value-icon">💪</div>
+                            <h3>Empowerment</h3>
+                            <p>Giving students the tools to make informed decisions</p>
+                        </div>
+                        <div class="value-card">
+                            <div class="value-icon">🌐</div>
+                            <h3>Accessibility</h3>
+                            <p>Ensuring financial solutions reach every student</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="vision-section">
+                    <h2>Our Impact</h2>
+                    <div class="impact-stats">
+                        <div class="impact-card">
+                            <span class="impact-number" data-target="10000">0</span>
+                            <span class="impact-label">Students Helped</span>
+                        </div>
+                        <div class="impact-card">
+                            <span class="impact-number" data-target="500">0</span>
+                            <span class="impact-label">Schemes Listed</span>
+                        </div>
+                        <div class="impact-card">
+                            <span class="impact-number">₹500 Cr+</span>
+                            <span class="impact-label">Funds Accessed</span>
+                        </div>
+                        <div class="impact-card">
+                            <span class="impact-number">92%</span>
+                            <span class="impact-label">Success Rate</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="vision-section">
+                    <h2>Meet Our Team</h2>
+                    <div class="team-grid" id="teamGrid"></div>
+                </div>
+
+                <div class="vision-section">
+                    <h2>Contact Us</h2>
+                    <form class="contact-form" onsubmit="handleContactSubmit(event)">
+                        <div class="form-group">
+                            <label class="form-label">Name</label>
+                            <input type="text" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Message</label>
+                            <textarea class="form-input" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Detail Modal -->
+    <div class="modal-overlay" id="detailModal">
+        <div class="modal">
+            <button class="modal-close" onclick="closeModal('detailModal')">&times;</button>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="modal-overlay" id="loginModal">
+        <div class="modal">
+            <button class="modal-close" onclick="closeModal('loginModal')">&times;</button>
+            <div class="login-tabs">
+                <button class="tab-button active" onclick="switchTab('login')">Login</button>
+                <button class="tab-button" onclick="switchTab('signup')">Sign Up</button>
+            </div>
+            
+            <div id="loginTab" class="tab-content active">
+                <form onsubmit="handleLogin(event)">
+                    <div class="form-group">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Password</label>
+                        <input type="password" class="form-input" required>
+                    </div>
+                    <div class="form-checkbox">
+                        <input type="checkbox" id="remember">
+                        <label for="remember">Remember Me</label>
+                    </div>
+                    <button type="submit" class="btn-primary">Login</button>
+                    <div style="text-align: center; margin-top: var(--space-16);">
+                        <a href="#" class="forgot-password">Forgot Password?</a>
+                    </div>
+                    <div class="divider">or</div>
+                    <button type="button" class="btn-google" onclick="handleGoogleLogin()">
+                        <span>🔐</span> Sign in with Google
+                    </button>
+                </form>
+            </div>
+
+            <div id="signupTab" class="tab-content">
+                <form onsubmit="handleSignup(event)">
+                    <div class="form-group">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Password</label>
+                        <input type="password" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Confirm Password</label>
+                        <input type="password" class="form-input" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Create Account</button>
+                    <div class="divider">or</div>
+                    <button type="button" class="btn-google" onclick="handleGoogleLogin()">
+                        <span>🔐</span> Sign up with Google
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+
+    <!-- Particle Canvas -->
+    <canvas id="particleCanvas"></canvas>
+
+    <script>
+        // Custom Cursor System - Enhanced Implementation
+        const cursor = document.getElementById('customCursor');
+        const trail = document.getElementById('cursorTrail');
+        let cursorX = 0, cursorY = 0;
+        let targetX = 0, targetY = 0;
+        let isHovering = false;
+
+        // Smooth cursor tracking with requestAnimationFrame
+        function updateCursor() {
+            // Smooth interpolation
+            cursorX += (targetX - cursorX) * 0.2;
+            cursorY += (targetY - cursorY) * 0.2;
+            
+            cursor.style.left = cursorX + 'px';
+            cursor.style.top = cursorY + 'px';
+            
+            requestAnimationFrame(updateCursor);
+        }
+
+        document.addEventListener('mousemove', (e) => {
+            targetX = e.clientX;
+            targetY = e.clientY;
+
+            // Create trail particle occasionally
+            if (Math.random() > 0.7) {
+                const particle = document.createElement('div');
+                particle.className = 'cursor-particle';
+                particle.style.left = e.clientX + 'px';
+                particle.style.top = e.clientY + 'px';
+                
+                // Random direction for particle
+                const tx = (Math.random() - 0.5) * 2;
+                const ty = (Math.random() - 0.5) * 2;
+                particle.style.setProperty('--tx', tx);
+                particle.style.setProperty('--ty', ty);
+                
+                trail.appendChild(particle);
+                
+                setTimeout(() => particle.remove(), 1000);
+            }
+        });
+
+        // Start cursor animation loop
+        requestAnimationFrame(updateCursor);
+
+        // Enhanced cursor hover effects with event delegation
+        document.body.addEventListener('mouseover', (e) => {
+            const target = e.target;
+            if (target.closest('button, a, .dynamic-card, .feature-card, .issue-card, .stat-card, .value-card, .team-member, input, select, textarea')) {
+                cursor.classList.add('cursor-hover');
+                isHovering = true;
+            }
+        });
+
+        document.body.addEventListener('mouseout', (e) => {
+            const target = e.target;
+            if (target.closest('button, a, .dynamic-card, .feature-card, .issue-card, .stat-card, .value-card, .team-member, input, select, textarea')) {
+                cursor.classList.remove('cursor-hover');
+                isHovering = false;
+            }
+        });
+
+        // Cursor click effect
+        document.addEventListener('mousedown', () => {
+            cursor.classList.add('cursor-click');
+        });
+
+        document.addEventListener('mouseup', () => {
+            cursor.classList.remove('cursor-click');
+        });
+
+        // Particle Background System
+        const canvas = document.getElementById('particleCanvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 1;
+                this.speedX = Math.random() * 0.5 - 0.25;
+                this.speedY = Math.random() * 0.5 - 0.25;
+                this.opacity = Math.random() * 0.5 + 0.2;
+            }
+
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+
+                if (this.x > canvas.width) this.x = 0;
+                if (this.x < 0) this.x = canvas.width;
+                if (this.y > canvas.height) this.y = 0;
+                if (this.y < 0) this.y = canvas.height;
+            }
+
+            draw() {
+                ctx.fillStyle = `rgba(32, 178, 170, ${this.opacity})`;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        const particles = [];
+        for (let i = 0; i < 100; i++) {
+            particles.push(new Particle());
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+                
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    
+                    if (distance < 100) {
+                        ctx.strokeStyle = `rgba(32, 178, 170, ${0.2 * (1 - distance / 100)})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+            requestAnimationFrame(animateParticles);
+        }
+
+        animateParticles();
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+
+        // Data - Real NSP Schemes
+        const schemes = [
+            {
+                id: 1,
+                name: "Pre-Matric Scholarship for Minorities",
+                provider: "Ministry of Minority Affairs, GoI",
+                category: "Scholarship",
+                level: "Pre-Matric (Classes IX-X)",
+                description: "Financial assistance for minority students pursuing pre-matric education",
+                monthlyAmount: "₹1,000-2,000",
+                eligibility: "Minority communities (Muslim, Christian, Sikh, Buddhist, Zoroastrian), Family income < ₹2.5 LPA, Studying in recognized school",
+                benefits: [
+                    "Monthly stipend for education expenses",
+                    "Book grant for academic materials",
+                    "Uniform allowance for school attire"
+                ],
+                documents: ["Income certificate", "Minority certificate", "School enrollment certificate", "Bank account details", "Aadhar/EID"],
+                applicationProcess: [
+                    "Register on NSP portal with OTR",
+                    "Fill application form with personal details",
+                    "Upload all required documents",
+                    "Submit through school verification",
+                    "Approval within 30-45 days"
+                ],
+                applicationType: "Online via National Scholarship Portal",
+                applicationLink: "https://scholarships.gov.in/Students",
+                notificationLink: "https://moma.gov.in",
+                lastDate: "2025-06-30",
+                seal: "MOMA",
+                government: true
+            },
+            {
+                id: 2,
+                name: "Post-Matric Scholarship for Minorities",
+                provider: "Ministry of Minority Affairs, GoI",
+                category: "Scholarship",
+                level: "Post-Matric (Classes XI-XII & Beyond)",
+                description: "Post-matric scholarships for students from minority communities",
+                monthlyAmount: "₹1,500-3,500",
+                eligibility: "Minority communities, Family income < ₹2.5 LPA, Pursuing post-matric education, Indian citizen",
+                benefits: [
+                    "Monthly maintenance allowance",
+                    "Book and clothing allowance",
+                    "Tuition fee reimbursement up to ₹5,000"
+                ],
+                documents: ["Income certificate", "Minority certificate", "Enrollment certificate from institution", "Previous year marks sheet", "Aadhar/EID", "Bank passbook first page"],
+                applicationProcess: [
+                    "Get OTR from NSP (Aadhaar based)",
+                    "Login to NSP with OTR and password",
+                    "Fill application form completely",
+                    "Upload all required documents",
+                    "Submit and get acknowledgment",
+                    "Track status on NSP"
+                ],
+                applicationType: "Online via National Scholarship Portal",
+                applicationLink: "https://scholarships.gov.in/Students",
+                notificationLink: "https://moma.gov.in",
+                lastDate: "2025-09-30",
+                seal: "MOMA",
+                government: true
+            },
+            {
+                id: 3,
+                name: "Central Sector Scheme for Interest Subvention (CSSIS)",
+                provider: "Ministry of Education & Skill Development, GoI",
+                category: "Education Loan",
+                level: "Higher Education (Bachelor & Master)",
+                description: "Interest subvention on education loans for economically weaker sections",
+                monthlyAmount: "100% Interest Coverage",
+                eligibility: "Family annual income ≤ ₹4.5 LPA, Indian national pursuing full-time higher education, Education loan from government/recognized bank, Admission to recognized institution",
+                benefits: [
+                    "100% interest subvention during study period",
+                    "Interest subvention up to 2 years after course completion",
+                    "6-month moratorium post-graduation",
+                    "Covers up to ₹10 lakhs"
+                ],
+                documents: ["Admission letter from institution", "Income certificate (not older than 6 months)", "Bank approval letter for education loan", "Identity proof (Aadhar/Pan)", "Academic certificates"],
+                applicationProcess: [
+                    "Get OTR on NSP portal",
+                    "Collect income certificate from appropriate authority",
+                    "Register and login on NSP",
+                    "Fill CSSIS application form",
+                    "Upload documents",
+                    "Institution verifies and approves",
+                    "Approved to bank for disbursal"
+                ],
+                applicationType: "Online via National Scholarship Portal",
+                applicationLink: "https://scholarships.gov.in/Students",
+                notificationLink: "https://www.aicte-india.org",
+                lastDate: "2025-12-31",
+                seal: "MoE",
+                government: true
+            },
+            {
+                id: 4,
+                name: "National Fellowship Scheme for SC/ST/OBC",
+                provider: "Ministry of Education, GoI",
+                category: "Research Fellowship",
+                level: "Doctoral Research (PhD)",
+                description: "Research fellowship for SC, ST, OBC students pursuing doctoral degrees",
+                monthlyAmount: "₹25,000-30,000",
+                eligibility: "Indian citizen, SC/ST/OBC category, Pursuing full-time PhD, Enrolled in recognized university, Qualified GATE/NET/CSIR examination",
+                benefits: [
+                    "Monthly stipend (₹25,000 for first 2 years, ₹28,000 after)",
+                    "Contingency grant for research expenses",
+                    "HRA component for accommodation",
+                    "Research grants for projects"
+                ],
+                documents: ["Category certificate", "GATE/NET/CSIR scorecard", "University enrollment certificate", "Guide recommendation letter", "B.Tech/M.Tech mark sheets"],
+                applicationProcess: [
+                    "Visit NSP portal",
+                    "Create OTR account with Aadhar",
+                    "Fill fellowship application",
+                    "Submit with all required documents",
+                    "University verification",
+                    "Ministry approval",
+                    "Monthly disbursement starts"
+                ],
+                applicationType: "Online via National Scholarship Portal",
+                applicationLink: "https://scholarships.gov.in/Students",
+                notificationLink: "https://www.dbt.gov.in",
+                lastDate: "2025-08-31",
+                seal: "DBT",
+                government: true
+            },
+            {
+                id: 5,
+                name: "AICTE Margdarshan Scholarship",
+                provider: "AICTE, Ministry of Education",
+                category: "Scholarship",
+                level: "Bachelor & Master (Technical Education)",
+                description: "Merit-cum-means scholarship for technical education students",
+                monthlyAmount: "₹5,000-10,000",
+                eligibility: "Enrolled in AICTE approved technical institution, Family income < ₹6 LPA, Minimum CGPA 6.5, Merit in entrance examination",
+                benefits: [
+                    "Monthly stipend for education expenses",
+                    "Mentoring program with industry experts",
+                    "Industry internship access opportunities",
+                    "Career guidance and placement support"
+                ],
+                documents: ["Income certificate", "CGPA transcript", "Enrollment certificate", "Entrance exam scorecard"],
+                applicationProcess: [
+                    "Register on NSP portal",
+                    "Fill AICTE scholarship application",
+                    "Institute verification process",
+                    "Approval and disbursement"
+                ],
+                applicationType: "Online via National Scholarship Portal",
+                applicationLink: "https://scholarships.gov.in/Students",
+                notificationLink: "https://www.aicte-india.org",
+                lastDate: "2025-11-30",
+                seal: "AICTE",
+                government: true
+            },
+            {
+                id: 6,
+                name: "UGC Scholarship for Merit",
+                provider: "University Grants Commission, GoI",
+                category: "Scholarship",
+                level: "Master & Doctoral Programs",
+                description: "Merit-based scholarship for postgraduate and research programs",
+                monthlyAmount: "₹8,000-15,000",
+                eligibility: "Bachelor's degree with minimum 55% marks, Admitted to recognized university, Merit-based selection, Indian citizen",
+                benefits: [
+                    "Monthly stipend for living expenses",
+                    "Thesis grants for research work",
+                    "Conference travel grants",
+                    "Professional development support"
+                ],
+                documents: ["Bachelor's degree certificate", "Mark sheets of bachelor's program", "University admission letter", "Identity proof"],
+                applicationProcess: [
+                    "University notifies merit list",
+                    "Eligible students apply on NSP",
+                    "UGC verification process",
+                    "Approval and monthly disbursement"
+                ],
+                applicationType: "Online via National Scholarship Portal",
+                applicationLink: "https://scholarships.gov.in/Students",
+                notificationLink: "https://www.ugc.ac.in",
+                lastDate: "2025-10-31",
+                seal: "UGC",
+                government: true
+            },
+            {
+                id: 7,
+                name: "Prime Minister's Scholarship Scheme for Wards of Police Personnel",
+                provider: "Ministry of Home Affairs, GoI",
+                category: "Scholarship",
+                level: "Bachelor & Master Programs",
+                description: "Scholarship for children of police personnel killed in action",
+                monthlyAmount: "₹2,000-5,000",
+                eligibility: "Child of police officer killed in line of duty, Studying in recognized Indian institution, Minimum 50% marks requirement, Age limit 25 years",
+                benefits: [
+                    "Monthly allowance for education",
+                    "One-time book grant",
+                    "Hostel accommodation support"
+                ],
+                documents: ["Death certificate of police officer", "Service records", "Enrollment certificate", "Income details"],
+                applicationProcess: [
+                    "Apply through NSP portal",
+                    "Submit police department documentation",
+                    "Verification by ministry",
+                    "Monthly disbursement starts"
+                ],
+                applicationType: "Online via National Scholarship Portal",
+                applicationLink: "https://scholarships.gov.in/Students",
+                notificationLink: "https://www.mha.gov.in",
+                lastDate: "2025-12-31",
+                seal: "MHA",
+                government: true
+            },
+            {
+                id: 8,
+name: "CSIR Research Fellowship",
+                provider: "Council of Scientific & Industrial Research, GoI",
+                category: "Research Fellowship",
+                level: "Doctoral & Post-Doctoral Research",
+                description: "Research fellowships for PhD and post-doctoral scientists",
+                monthlyAmount: "₹31,000-35,000",
+                eligibility: "Indian citizen, Masters degree in science/engineering, Qualified NET/GATE examination, Enrolled at CSIR laboratory/university",
+                benefits: [
+                    "Monthly research fellowship",
+                    "HRA and contingency allowance",
+                    "Research project funding support",
+                    "Publication support for papers"
+                ],
+                documents: ["Masters degree certificate", "NET/GATE scorecard", "University admission letter", "Guide recommendation"],
+                applicationProcess: [
+                    "Apply online on NSP portal",
+                    "CSIR merit evaluation process",
+                    "Selection interview",
+                    "Appointment and disbursement"
+                ],
+                applicationType: "Online via National Scholarship Portal",
+                applicationLink: "https://scholarships.gov.in/Students",
+                notificationLink: "https://www.csir.res.in",
+                lastDate: "2025-09-30",
+                seal: "CSIR",
+                government: true
+            },
+            {
+                id: 9,
+                name: "HDFC Bank Education Loan",
+                provider: "HDFC Bank",
+                category: "Education",
+                description: "Education loan for higher studies in India and abroad",
+                eligibility: "Age 18-40, pursuing higher education, valid admission",
+                benefits: [
+                    "Up to ₹20 lakhs for India, ₹40 lakhs abroad",
+                    "0-2% interest subsidy for girls/SC/ST",
+                    "10-year repayment period"
+                ],
+                documents: ["Admission letter", "Income proof", "Educational certificates", "ID proof"],
+                applicationType: "Online/Offline at branch",
+                applicationLink: "https://www.hdfcbank.com"
+            },
+            {
+                id: 6,
+                name: "State Education Loan Schemes",
+                provider: "State Government",
+                category: "Education",
+                description: "Education loans offered by state-level banks and agencies",
+                eligibility: "Student of that state, pursuing higher education",
+                benefits: [
+                    "Up to ₹10-15 lakhs",
+                    "Low interest rates (5-7%)",
+                    "Flexible repayment options"
+                ],
+                documents: ["State domicile certificate", "Admission letter", "Income proof"],
+                applicationType: "Apply at state bank",
+                applicationLink: "Contact your state education ministry"
+            },
+            {
+                id: 7,
+                name: "Vidyalakshmi Portal Schemes",
+                provider: "Ministry of Education",
+                category: "Scholarships",
+                description: "Unified portal for educational loans and scholarships",
+                eligibility: "Indian citizens pursuing higher education",
+                benefits: [
+                    "Centralized access to multiple schemes",
+                    "Simplified application process",
+                    "Reduced documentation"
+                ],
+                documents: ["Basic KYC documents", "Educational certificates"],
+                applicationType: "Online via Vidyalakshmi",
+                applicationLink: "https://vidyalakshmi.nsdl.com"
+            },
+            {
+                id: 8,
+                name: "Pradhan Mantri Yuva Yojana",
+                provider: "Government of India",
+                category: "Employment",
+                description: "Internship program providing stipend to recent graduates",
+                eligibility: "Age 21-24, recent graduate, Indian citizen",
+                benefits: [
+                    "₹5,000-8,000 monthly internship stipend",
+                    "1-year internship placement",
+                    "Certificate and job referrals"
+                ],
+                documents: ["Degree certificate", "Age proof", "Resume"],
+                applicationType: "Online registration",
+                applicationLink: "https://pib.gov.in"
+            }
+        ];
+
+        const policies = [
+            {
+                id: 1,
+                name: "Education Loan Interest Deduction (Section 80E)",
+                issuer: "Income Tax Department",
+                type: "Tax Benefits",
+                description: "Tax deduction on education loan interest up to ₹1.5 lakhs",
+                coverage: "Interest paid on education loans for higher education",
+                benefits: [
+                    "Full deduction on education loan interest",
+                    "No limit on number of assessment years",
+                    "Applies to self and dependents"
+                ],
+                eligibility: "Taxable income from any source, education loan taken",
+                applicationType: "File ITR with Form 80E",
+                documentationRequired: "Education loan statement, Interest receipt, Pan card"
+            },
+            {
+                id: 2,
+                name: "Central Sponsored Scholarship Scheme",
+                issuer: "Ministry of Education",
+                type: "Scholarships",
+                description: "Merit-based scholarships for top 10% students from each state",
+                coverage: "Tuition fees and monthly maintenance allowance",
+                benefits: [
+                    "₹5,000 monthly stipend",
+                    "100% tuition fee waiver",
+                    "Book grant of ₹5,000"
+                ],
+                eligibility: "Top 10% students, family income < 6 LPA",
+                applicationType: "Merit-based selection through state education board",
+                documentationRequired: "Board exam certificate, Merit list, Income proof"
+            },
+            {
+                id: 3,
+                name: "National Education Assistance Fund",
+                issuer: "Ministry of Education",
+                type: "Financial Assistance",
+                description: "Emergency financial assistance for deserving students",
+                coverage: "One-time assistance for genuine financial hardship",
+                benefits: [
+                    "Up to ₹50,000 per student",
+                    "One-time assistance",
+                    "No repayment required"
+                ],
+                eligibility: "Students in financial crisis, valid institutional enrollment",
+                applicationType: "Application through institution",
+                documentationRequired: "Enrollment certificate, Financial hardship proof, Identity proof"
+            },
+            {
+                id: 4,
+                name: "Insurance Coverage for Students",
+                issuer: "Multiple Insurance Companies",
+                type: "Insurance",
+                description: "Health and accident insurance specifically designed for students",
+                coverage: "Medical emergencies, hospitalization, accidental death/disability",
+                benefits: [
+                    "₹5-10 lakhs health coverage",
+                    "₹25-50 lakhs accidental death benefit",
+                    "₹100-500 per day hospitalization"
+                ],
+                eligibility: "All students, age 18-25",
+                applicationType: "Online or through insurance agent",
+                documentationRequired: "Age proof, Educational ID, Health declaration"
+            },
+            {
+                id: 5,
+                name: "Student Credit Card Schemes",
+                issuer: "Various Banks",
+                type: "Credit Facility",
+                description: "Interest-free credit for educational expenses and living costs",
+                coverage: "Tuition fees, hostel, books, equipment, and daily needs",
+                benefits: [
+                    "₹10,000-50,000 credit limit",
+                    "0% interest for 6-12 months",
+                    "Easy repayment options"
+                ],
+                eligibility: "Students above 18, valid identification",
+                applicationType: "Online or offline at bank branch",
+                documentationRequired: "Student ID, Income proof, Identity proof, Address proof"
+            },
+            {
+                id: 6,
+                name: "Scholarship for Girl Child Education",
+                issuer: "State/Central Government",
+                type: "Scholarships",
+                description: "Special scholarships to encourage girl child education",
+                coverage: "Full or partial tuition fee coverage, monthly stipend",
+                benefits: [
+                    "100% tuition fee coverage",
+                    "₹2,000-5,000 monthly stipend",
+                    "Special allowances for STEM fields"
+                ],
+                eligibility: "Female students, merit-based, income criteria apply",
+                applicationType: "Online via state education portal",
+                documentationRequired: "Birth certificate, Merit certificate, Income proof, Gender ID"
+            },
+            {
+                id: 7,
+                name: "Post-Matric Scholarship for SC/ST/OBC",
+                issuer: "Ministry of Social Justice",
+                type: "Scholarships",
+                description: "Scholarships for scheduled castes, scheduled tribes, and OBC students",
+                coverage: "Tuition and maintenance allowance",
+                benefits: [
+                    "₹9,000-20,000 annually",
+                    "100% fee reimbursement",
+                    "Maintenance grant"
+                ],
+                eligibility: "SC/ST/OBC category, pursuing post-matric education",
+                applicationType: "Online via NSP",
+                documentationRequired: "Caste certificate, Merit certificate, Income proof, Category proof"
+            }
+        ];
+
+        const issues = [
+            {
+                id: 1,
+                title: "Tuition Fee Burden",
+                category: "Fees",
+                description: "Struggling with high tuition fees and cannot afford education",
+                relatedSchemes: [1, 2, 3, 5],
+                relatedPolicies: [1, 2, 3],
+                quickTips: [
+                    "Apply for education loans with interest subvention",
+                    "Look for merit-based scholarships",
+                    "Check for state-specific fee assistance programs",
+                    "Consider installment payment plans from college"
+                ],
+                solutions: [
+                    "Central Sector Scheme for Interest Subvention",
+                    "AICTE Education Assistance Program",
+                    "Bank Education Loans"
+                ]
+            },
+            {
+                id: 2,
+                title: "Hostel and Accommodation Costs",
+                category: "Living Expenses",
+                description: "High costs of hostel accommodation and living expenses",
+                relatedSchemes: [2, 3, 7],
+                relatedPolicies: [2, 4],
+                quickTips: [
+                    "Apply for maintenance allowance scholarships",
+                    "Share accommodation with roommates",
+                    "Look for on-campus work-study programs",
+                    "Check government accommodation assistance"
+                ],
+                solutions: [
+                    "NSP Post-Matric Scholarship with maintenance",
+                    "Student Credit Cards for living expenses",
+                    "Part-time job opportunities on campus"
+                ]
+            },
+            {
+                id: 3,
+                title: "Part-Time Work Balance",
+                category: "Employment",
+                description: "Balancing studies with part-time work to earn income",
+                relatedSchemes: [4, 8],
+                relatedPolicies: [3, 5],
+                quickTips: [
+                    "Look for internship programs with stipends",
+                    "Apply for government employment schemes",
+                    "Consider online freelancing work",
+                    "Explore campus ambassador opportunities"
+                ],
+                solutions: [
+                    "Pradhan Mantri Yuva Yojana for internships",
+                    "AICTE Margdarshan mentorship and placement",
+                    "Campus work-study programs"
+                ]
+            },
+            {
+                id: 4,
+                title: "EMI and Loan Management",
+                category: "Debt Management",
+                description: "Managing education loan EMIs and repayment",
+                relatedSchemes: [1, 5, 6],
+                relatedPolicies: [1, 3],
+                quickTips: [
+                    "Know your income-based repayment options",
+                    "Apply for moratorium after graduation",
+                    "Claim tax deductions on interest paid",
+                    "Track loan status regularly"
+                ],
+                solutions: [
+                    "Interest Subvention Schemes during studies",
+                    "Section 80E tax deduction on loan interest",
+                    "Flexible repayment plans from lenders"
+                ]
+            },
+            {
+                id: 5,
+                title: "Exam and Certification Fees",
+                category: "Educational Expenses",
+                description: "High costs of exams, certifications, and professional courses",
+                relatedSchemes: [3, 7],
+                relatedPolicies: [2, 6],
+                quickTips: [
+                    "Look for fee waiver programs",
+                    "Apply for categorical scholarships",
+                    "Seek employer sponsorship",
+                    "Check for subsidized exam programs"
+                ],
+                solutions: [
+                    "Government scholarship programs",
+                    "Professional association fee assistance",
+                    "Corporate training sponsorships"
+                ]
+            },
+            {
+                id: 6,
+                title: "Internship Stipend Gap",
+                category: "Income Gap",
+                description: "Not receiving internship stipend or facing delayed payments",
+                relatedSchemes: [4, 8],
+                relatedPolicies: [5],
+                quickTips: [
+                    "Apply for government internship programs",
+                    "Verify internship contract terms",
+                    "Seek legal aid if non-payment occurs",
+                    "Explore alternative income sources"
+                ],
+                solutions: [
+                    "Pradhan Mantri Yuva Yojana internships",
+                    "AICTE placement assistance",
+                    "Campus work-study programs"
+                ]
+            }
+        ];
+
+        const teamMembers = [
+            { name: "Dr. Aarav Kumar", role: "CEO & Founder", image: "https://i.pravatar.cc/150?img=12" },
+            { name: "Priya Sharma", role: "COO & Finance Expert", image: "https://i.pravatar.cc/150?img=5" },
+            { name: "Rohan Patel", role: "CTO & Tech Lead", image: "https://i.pravatar.cc/150?img=33" },
+            { name: "Neha Verma", role: "Head of Policy & Research", image: "https://i.pravatar.cc/150?img=9" },
+            { name: "Arjun Singh", role: "Student Success Manager", image: "https://i.pravatar.cc/150?img=14" },
+            { name: "Kavya Reddy", role: "Data & Analytics Lead", image: "https://i.pravatar.cc/150?img=10" }
+        ];
+
+        // State
+        let currentPage = 'home';
+        let filteredSchemes = [...schemes];
+        let filteredPolicies = [...policies];
+
+        // Navigation
+        function navigateTo(page) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.getElementById(page).classList.add('active');
+            
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('onclick').includes(page)) {
+                    link.classList.add('active');
+                }
+            });
+
+            currentPage = page;
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            
+            if (window.innerWidth <= 768) {
+                document.getElementById('navLinks').classList.remove('active');
+            }
+
+            if (page === 'schemes') renderSchemes();
+            if (page === 'policies') renderPolicies();
+            if (page === 'issues') renderIssues();
+            if (page === 'vision') {
+                renderTeam();
+                animateCounters();
+            }
+        }
+
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+
+        // Render Functions
+        function renderSchemes() {
+            const grid = document.getElementById('schemesGrid');
+            grid.innerHTML = filteredSchemes.map(scheme => `
+                <div class="dynamic-card" onclick="showSchemeDetail(${scheme.id})">
+                    <div class="card-header">
+                        <div>
+                            ${scheme.government ? '<div class="govt-seal">' + scheme.seal + '</div>' : '<div class="badge">' + scheme.provider + '</div>'}
+                            <h3 class="card-title">${scheme.name}</h3>
+                            <div class="card-category">${scheme.category} | ${scheme.level || 'All Levels'}</div>
+                        </div>
+                    </div>
+                    <p class="card-description">${scheme.description}</p>
+                    <div style="padding: var(--space-12); background: var(--color-bg-1); border-radius: var(--radius-sm); margin: var(--space-12) 0;">
+                        <strong style="color: var(--neon-cyan);">💰 ${scheme.monthlyAmount || 'Variable Amount'}</strong>
+                    </div>
+                    <ul class="card-benefits">
+                        ${scheme.benefits.slice(0, 3).map(b => `<li>${b}</li>`).join('')}
+                    </ul>
+                    <button class="btn-secondary">View Details & Apply →</button>
+                </div>
+            `).join('');
+        }
+
+        function renderPolicies() {
+            const grid = document.getElementById('policiesGrid');
+            grid.innerHTML = filteredPolicies.map(policy => `
+                <div class="dynamic-card" onclick="showPolicyDetail(${policy.id})">
+                    <div class="card-header">
+                        <div>
+                            <div class="badge">${policy.type}</div>
+                            <h3 class="card-title">${policy.name}</h3>
+                            <div class="card-category">${policy.issuer}</div>
+                        </div>
+                    </div>
+                    <p class="card-description">${policy.description}</p>
+                    <ul class="card-benefits">
+                        ${policy.benefits.slice(0, 3).map(b => `<li>${b}</li>`).join('')}
+                    </ul>
+                    <button class="btn-secondary">Learn More</button>
+                </div>
+            `).join('');
+        }
+
+        function renderIssues() {
+            const grid = document.getElementById('issuesGrid');
+            grid.innerHTML = issues.map(issue => `
+                <div class="issue-card" onclick="showIssueDetail(${issue.id})">
+                    <div class="issue-category">${issue.category}</div>
+                    <h3 class="card-title">${issue.title}</h3>
+                    <p class="card-description">${issue.description}</p>
+                    <ul class="tips-list">
+                        ${issue.quickTips.slice(0, 2).map(tip => `<li>${tip}</li>`).join('')}
+                    </ul>
+                    <button class="btn-secondary">Get Solutions</button>
+                </div>
+            `).join('');
+        }
+
+        function renderTeam() {
+            const grid = document.getElementById('teamGrid');
+            grid.innerHTML = teamMembers.map(member => `
+                <div class="team-member">
+                    <img src="${member.image}" alt="${member.name}" class="team-photo">
+                    <h4>${member.name}</h4>
+                    <p>${member.role}</p>
+                </div>
+            `).join('');
+        }
+
+        // Filter Functions
+        function filterSchemes() {
+            const search = document.getElementById('schemeSearch').value.toLowerCase();
+            const level = document.getElementById('schemeLevel').value;
+            const category = document.getElementById('schemeCategory').value;
+            const provider = document.getElementById('schemeProvider').value;
+
+            filteredSchemes = schemes.filter(scheme => {
+                const matchesSearch = scheme.name.toLowerCase().includes(search) || 
+                                     scheme.description.toLowerCase().includes(search) ||
+                                     scheme.eligibility.toLowerCase().includes(search);
+                const matchesLevel = !level || (scheme.level && scheme.level.includes(level));
+                const matchesCategory = !category || scheme.category === category;
+                const matchesProvider = !provider || scheme.seal === provider || scheme.provider.includes(provider);
+                return matchesSearch && matchesLevel && matchesCategory && matchesProvider;
+            });
+
+            renderSchemes();
+            revealOnScroll();
+        }
+
+        function filterPolicies() {
+            const search = document.getElementById('policySearch').value.toLowerCase();
+            const type = document.getElementById('policyType').value;
+
+            filteredPolicies = policies.filter(policy => {
+                const matchesSearch = policy.name.toLowerCase().includes(search) || 
+                                     policy.description.toLowerCase().includes(search);
+                const matchesType = !type || policy.type === type;
+                return matchesSearch && matchesType;
+            });
+
+            renderPolicies();
+        }
+
+        // Detail Functions
+        function showSchemeDetail(id) {
+            const scheme = schemes.find(s => s.id === id);
+            const content = `
+                <div style="display: flex; align-items: center; gap: var(--space-16); margin-bottom: var(--space-24);">
+                    <h2 style="flex: 1; margin: 0;">${scheme.name}</h2>
+                    ${scheme.government ? '<div class="govt-seal">' + scheme.seal + '</div>' : ''}
+                </div>
+                <div style="background: var(--color-bg-1); padding: var(--space-16); border-radius: var(--radius-base); margin-bottom: var(--space-24); border-left: 4px solid var(--neon-cyan);">
+                    <strong style="color: var(--neon-cyan); font-size: var(--font-size-xl);">💰 ${scheme.monthlyAmount || 'Financial Support'}</strong>
+                    <p style="margin: var(--space-8) 0 0 0; color: var(--color-text-secondary);">Provider: ${scheme.provider}</p>
+                    <p style="margin: var(--space-4) 0 0 0; color: var(--color-text-secondary);">Level: ${scheme.level || 'All Levels'}</p>
+                    ${scheme.lastDate ? `<p style="margin: var(--space-4) 0 0 0; color: var(--color-warning);">Last Date: ${scheme.lastDate}</p>` : ''}
+                </div>
+                <div class="modal-section">
+                    <h3>📝 Description</h3>
+                    <p>${scheme.description}</p>
+                </div>
+                <div class="modal-section">
+                    <h3>✅ Eligibility Criteria</h3>
+                    <p>${scheme.eligibility}</p>
+                </div>
+                <div class="modal-section">
+                    <h3>🎁 Benefits</h3>
+                    <ul>
+                        ${scheme.benefits.map(b => `<li>${b}</li>`).join('')}
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <h3>📄 Documents Required</h3>
+                    <ul>
+                        ${scheme.documents.map(d => `<li>${d}</li>`).join('')}
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <h3>🔄 Application Process</h3>
+                    ${scheme.applicationProcess ? `
+                        <ol style="padding-left: var(--space-24); color: var(--color-text-secondary);">
+                            ${scheme.applicationProcess.map((step, i) => `<li style="margin: var(--space-8) 0;">${step}</li>`).join('')}
+                        </ol>
+                    ` : `<p>${scheme.applicationType}</p>`}
+                </div>
+                <div style="background: var(--color-bg-8); padding: var(--space-20); border-radius: var(--radius-base); margin-top: var(--space-24); text-align: center; border: 2px solid var(--neon-cyan);">
+                    <h3 style="color: var(--neon-cyan); margin-bottom: var(--space-16);">🏛️ Apply on National Scholarship Portal</h3>
+                    <p style="color: var(--color-text-secondary); margin-bottom: var(--space-16);">This is a Government of India verified scheme. Apply directly through NSP.</p>
+                    <a href="${scheme.applicationLink}" target="_blank" class="btn-primary" style="display: inline-block; text-decoration: none; margin-right: var(--space-12);">Go to NSP Portal →</a>
+                    ${scheme.notificationLink ? `<a href="${scheme.notificationLink}" target="_blank" class="btn-secondary" style="display: inline-block; text-decoration: none;">Official Notification</a>` : ''}
+                </div>
+            `;
+            document.getElementById('modalContent').innerHTML = content;
+            openModal('detailModal');
+        }
+
+        function showPolicyDetail(id) {
+            const policy = policies.find(p => p.id === id);
+            const content = `
+                <h2>${policy.name}</h2>
+                <div class="badge" style="margin-bottom: 16px;">${policy.issuer}</div>
+                <div class="modal-section">
+                    <h3>Description</h3>
+                    <p>${policy.description}</p>
+                </div>
+                <div class="modal-section">
+                    <h3>Coverage</h3>
+                    <p>${policy.coverage}</p>
+                </div>
+                <div class="modal-section">
+                    <h3>Benefits</h3>
+                    <ul>
+                        ${policy.benefits.map(b => `<li>${b}</li>`).join('')}
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <h3>Eligibility</h3>
+                    <p>${policy.eligibility}</p>
+                </div>
+                <div class="modal-section">
+                    <h3>How to Apply</h3>
+                    <p>${policy.applicationType}</p>
+                    <p><strong>Documents:</strong> ${policy.documentationRequired}</p>
+                </div>
+            `;
+            document.getElementById('modalContent').innerHTML = content;
+            openModal('detailModal');
+        }
+
+        function showIssueDetail(id) {
+            const issue = issues.find(i => i.id === id);
+            const relatedSchemesList = issue.relatedSchemes.map(sid => schemes.find(s => s.id === sid).name);
+            const content = `
+                <h2>${issue.title}</h2>
+                <div class="issue-category" style="margin-bottom: 16px;">${issue.category}</div>
+                <div class="modal-section">
+                    <h3>Problem</h3>
+                    <p>${issue.description}</p>
+                </div>
+                <div class="modal-section">
+                    <h3>Quick Tips</h3>
+                    <ul>
+                        ${issue.quickTips.map(tip => `<li>${tip}</li>`).join('')}
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <h3>Recommended Solutions</h3>
+                    <ul>
+                        ${issue.solutions.map(s => `<li>${s}</li>`).join('')}
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <h3>Related Schemes</h3>
+                    <ul>
+                        ${relatedSchemesList.map(s => `<li>${s}</li>`).join('')}
+                    </ul>
+                </div>
+            `;
+            document.getElementById('modalContent').innerHTML = content;
+            openModal('detailModal');
+        }
+
+        // Modal Functions
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function switchTab(tab) {
+            document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            
+            if (tab === 'login') {
+                document.querySelectorAll('.tab-button')[0].classList.add('active');
+                document.getElementById('loginTab').classList.add('active');
+            } else {
+                document.querySelectorAll('.tab-button')[1].classList.add('active');
+                document.getElementById('signupTab').classList.add('active');
+            }
+        }
+
+        // Form Handlers
+        function handleLogin(e) {
+            e.preventDefault();
+            showToast('Login successful! Welcome back.');
+            closeModal('loginModal');
+        }
+
+        function handleSignup(e) {
+            e.preventDefault();
+            showToast('Account created successfully! Welcome to YojnaMitra.');
+            closeModal('loginModal');
+        }
+
+        function handleGoogleLogin() {
+            showToast('Google login initiated...');
+        }
+
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            showToast('Message sent successfully! We\'ll get back to you soon.');
+            e.target.reset();
+        }
+
+        // Toast Notification
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        // Animate Counters
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number[data-target], .impact-number[data-target]');
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                if (!target) return;
+                const duration = 2000;
+                const step = target / (duration / 16);
+                let current = 0;
+                
+                const timer = setInterval(() => {
+                    current += step;
+                    if (current >= target) {
+                        counter.textContent = target.toLocaleString();
+                        clearInterval(timer);
+                    } else {
+                        counter.textContent = Math.floor(current).toLocaleString();
+                    }
+                }, 16);
+            });
+        }
+
+        // Smooth scroll animations for cards
+        function revealOnScroll() {
+            const cards = document.querySelectorAll('.cards-grid > *');
+            const windowHeight = window.innerHeight;
+            cards.forEach(card => {
+                const rect = card.getBoundingClientRect();
+                if (rect.top < windowHeight - 50) {
+                    card.style.opacity = '1';
+                    card.style.transform = 'none';
+                } else {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(50px)';
+                }
+            });
+        }
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('DOMContentLoaded', revealOnScroll);
+
+        // Touch/Pointer support for cursor on mobile
+        if (window.matchMedia('(pointer: coarse)').matches) {
+            cursor.style.display = 'none';
+            trail.style.display = 'none';
+        }
+
+        // Additional counter animation for impact stats
+        function animateImpactCounters() {
+            const counters = document.querySelectorAll('.impact-number[data-target]');
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                if (!target) return;
+                const duration = 2000;
+                const step = target / (duration / 16);
+                let current = 0;
+                
+                const timer = setInterval(() => {
+                    current += step;
+                    if (current >= target) {
+                        counter.textContent = target.toLocaleString();
+                        clearInterval(timer);
+                    } else {
+                        counter.textContent = Math.floor(current).toLocaleString();
+                    }
+                }, 16);
+            });
+        }
+        animateImpactCounters();
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Close modal on outside click
+        document.querySelectorAll('.modal-overlay').forEach(overlay => {
+            overlay.addEventListener('click', (e) => {
+                if (e.target === overlay) {
+                    closeModal(overlay.id);
+                }
+            });
+        });
+
+        // Initialize
+        window.addEventListener('DOMContentLoaded', () => {
+            renderSchemes();
+            renderPolicies();
+            renderIssues();
+            animateCounters();
+            
+            // Add ripple effect to buttons
+            document.querySelectorAll('.btn-primary, .btn-secondary, .btn-login').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    const ripple = document.createElement('span');
+                    ripple.style.position = 'absolute';
+                    ripple.style.borderRadius = '50%';
+                    ripple.style.background = 'rgba(255, 255, 255, 0.5)';
+                    ripple.style.width = ripple.style.height = '100px';
+                    ripple.style.left = e.clientX - this.getBoundingClientRect().left - 50 + 'px';
+                    ripple.style.top = e.clientY - this.getBoundingClientRect().top - 50 + 'px';
+                    ripple.style.animation = 'ripple 0.6s ease-out';
+                    ripple.style.pointerEvents = 'none';
+                    this.appendChild(ripple);
+                    setTimeout(() => ripple.remove(), 600);
+                });
+            });
+        });
+        
+        // Ripple animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
